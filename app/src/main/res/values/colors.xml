@@ -18,7 +18,7 @@
     <color name="colorTransparentBlack">#64000000</color>
     <color name="colorTransparentWhite">#a1ffffff</color>
     <color name="colorStroke">#979797</color>
-    <color name="colorShadow">#E4E4E4</color>
+    <color name="colorGray">#AEF2ECEC</color>
     <color name="colorRed">#FF0000</color>
 
     <!--Army!!! Please update above color as per your new project theme add more color below-->

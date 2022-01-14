@@ -6,5 +6,5 @@
         android:bottomLeftRadius="@dimen/margin_16"
         android:topLeftRadius="@dimen/margin_16" />
 
-    <solid android:color="@color/colorShadow" />
+    <solid android:color="@color/colorGray" />
 </shape>

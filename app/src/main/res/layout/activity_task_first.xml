@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorGray"
     android:layout_height="match_parent"
     tools:context=".presentation.home.activities.TaskSecondActivity">
 
@@ -12,6 +13,8 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_number"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="@string/enter_square_root_number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
@@ -26,6 +29,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_10sdp"
         android:text="@string/submit"
@@ -38,6 +43,7 @@
         android:id="@+id/recycler_view_box"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        tools:listitem="@layout/cell_box_item"
         android:layout_margin="@dimen/_10sdp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

@@ -25,5 +25,7 @@
     <string name="title_grid_list">Grid List</string>
     <string name="validation_number_greater_than_zero">Please enter number greater than 0!</string>
     <string name="validation_root_number">Please enter valid square root number!</string>
+    <string name="enter_square_root_number">Enter square root number</string>
+    <string name="label_wow_you_did_it">Wow! you did it</string>
 
 </resources>
