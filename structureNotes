@@ -1,0 +1,35 @@
+Kotlin topics:
+
+1. Val / Var
+2. List / MutableList
+3. Nullable  ? / !!
+4. let / find / filter / apply
+5. data class / sealed class
+6. Coroutine Scope:
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/
+
+7. Launch:
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html
+
+8: Async (Deferred):
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html
+
+9: ViewModel , LiveData
+10: Dependency Injection:
+- Android10 (https://github.com/android10/Android-CleanArchitecture),
+- Koin (https://insert-koin.io/),
+- DS, DataSource, Repo
+
+
+
+
+
+Github Push / Pull / Code standards.
+
+feat - (new feature for the user, not a new feature for build script)
+fix - (bug fix for the user, not a fix to a build script)
+docs - (changes to the documentation)
+style - (formatting, missing semi colons, etc; no production code change)
+refactor - (refactoring production code, eg. renaming a variable)
+test - (adding missing tests, refactoring tests; no production code change)
+chore - (updating grunt tasks etc; no production code change)

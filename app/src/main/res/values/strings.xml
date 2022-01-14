@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AndroidPracticleTask</string>
+
+    <string name="digit_abc">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!--Exception message-->
+    <string name="exception_error_network">Internet connection not found.</string>
+    <string name="exception_error_server">Server is under maintenance, please try after some time.</string>
+    <string name="exception_error_unparceble">Unknown data found from server.</string>
+    <string name="exception_error_database">Database error</string>
+
+    <!--Error strings-->
+    <string name="error_empty">Field cannot be empty</string>
+    <string name="default_notification_channel_id">1</string>
+    <string name="no_data_found">No data found</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="android_practical_test">Android Practical Test</string>
+    <string name="v1_0_0">v1.0.0</string>
+
+</resources>

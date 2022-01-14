@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="otp_length">4</integer>
+
+    <!--Min validations-->
+    <integer name="min_length">5</integer>
+    <integer name="min_length_mobile">8</integer>
+    <integer name="min_length_email">10</integer>
+    <integer name="min_length_password">6</integer>
+    <integer name="min_length_description">20</integer>
+
+
+    <!--Max validations-->
+    <integer name="max_length">50</integer>
+    <integer name="max_length_mobile">9</integer>
+    <integer name="max_length_email">50</integer>
+    <integer name="max_length_website">100</integer>
+    <integer name="max_length_password">15</integer>
+    <integer name="max_length_message">250</integer>
+    <integer name="max_length_description">500</integer>
+    <integer name="max_length_photo">10</integer>
+
+
+</resources>

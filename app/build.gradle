@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-parcelize'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.org.android"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "SERVER_URL", '"https://reqres.in/api/"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "SERVER_URL", '"https://reqres.in/api/"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        staging {
+            dimension "version"
+            // applicationIdSuffix ".staging"
+            buildConfigField "String", "SERVER_URL_NEW", '"https://reqres.in/api/"'
+        }
+
+        local {
+            dimension "version"
+            // applicationIdSuffix ".local"
+            buildConfigField "String", "SERVER_URL_NEW", '"https://reqres.in/api/"'
+        }
+
+        live {
+            dimension "version"
+            // applicationIdSuffix ".live"
+            buildConfigField "String", "SERVER_URL_NEW", '"https://reqres.in/api/"'
+        }
+    }
+
+    kapt {
+        generateStubs = true
+    }
+    kapt {
+        correctErrorTypes = true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    dataBinding {
+        enabled true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+
+    def mockito_version = '2.22.0'
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
+
+    androidTestImplementation("com.android.support.test:runner:1.0.2")
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation "android.arch.core:core-testing:1.1.0"
+
+
+    //Support
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
+
+    //Kotlin coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlincoroutine_version"
+
+    //Koin for Android
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-scope:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    //Retrofit & okhttp
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    //ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
+
+
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+
+    //Others
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.intuit.sdp:sdp-android:$sdp_version"
+
+}
