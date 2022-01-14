@@ -152,7 +152,7 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
     fun setupToolbar(
         toolbar: Toolbar,
         title: String,
-        needToShowBackButton: Boolean? = false,
+        needToShowBackButton: Boolean? = true,
         titleTextColor: Int? = R.color.colorBlack,
         toolbarColor: Int? = null,
         backButtonColor: Int? = null
@@ -169,11 +169,11 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
         toolbar.findViewById<AppCompatTextView>(R.id.txt_header).text = title
         toolbar.findViewById<AppCompatTextView>(R.id.txt_header).setTextColor(titleTextColor!!)
 
-        if (toolbarColor != null) {
-            toolbar.background = ColorDrawable(toolbarColor)
-        } else {
-            toolbar.background = ColorDrawable(Color.TRANSPARENT)
-        }
+        /* if (toolbarColor != null) {
+             toolbar.background = ColorDrawable(toolbarColor)
+         } else {
+             toolbar.background = ColorDrawable(Color.TRANSPARENT)
+         }*/
 
     }
 

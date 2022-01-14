@@ -18,7 +18,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_practical_task_one"
+            android:id="@+id/btn_practical_task_fisrt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

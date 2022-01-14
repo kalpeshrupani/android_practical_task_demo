@@ -20,5 +20,10 @@
     <string name="android_practical_test">Android Practical Test</string>
     <string name="v1_0_0">v1.0.0</string>
     <string name="title_user_list">User List</string>
+    <string name="title_home_screen">Android Practical Task</string>
+    <string name="submit">Submit</string>
+    <string name="title_grid_list">Grid List</string>
+    <string name="validation_number_greater_than_zero">Please enter number greater than 0!</string>
+    <string name="validation_root_number">Please enter valid square root number!</string>
 
 </resources>

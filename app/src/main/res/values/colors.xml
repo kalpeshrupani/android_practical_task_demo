@@ -12,6 +12,7 @@
     <color name="colorTextSecondary">#7b7b7b</color>
 
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#0000FF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorTransparentBlack">#64000000</color>

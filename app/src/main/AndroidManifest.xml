@@ -19,6 +19,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".presentation.home.activities.TaskFirstActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.home.activities.TaskSecondActivity"
             android:screenOrientation="fullSensor" />
         <activity

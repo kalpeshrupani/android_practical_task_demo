@@ -47,6 +47,11 @@ abstract class BaseRecyclerViewAdapter<T>(
         notifyItemRangeRemoved(0, oldSize)
     }
 
+    fun resetData(list: List<T>) {
+        this.mList = list as ArrayList<T>
+        notifyDataSetChanged()
+    }
+
     fun setData(list: List<T>) {
         this.mList.addAll(list)
         notifyItemRangeInserted(0, mList.size)

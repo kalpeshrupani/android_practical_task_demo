@@ -40,9 +40,10 @@ class HomeActivity : BaseActivity() {
     private fun init() {
         setupToolbar(
             binding.llToolbarMain.toolbar,
-            getString(R.string.app_name),
+            getString(R.string.title_home_screen),
             false,
-            Color.BLACK
+            Color.WHITE,
+            toolbarColor = R.color.colorPrimary
         )
         initClickListener()
         attachObserver()
@@ -50,8 +51,11 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun initClickListener() {
+        binding.btnPracticalTaskFisrt.setOnClickListener {
+            startActivityCustom(IntentHelper.getTaskFirstScreenIntent(this, false))
+        }
         binding.btnPracticalTaskSecond.setOnClickListener {
-            startActivityCustom(IntentHelper.getTaskSecondScreenIntent(this, true))
+            startActivityCustom(IntentHelper.getTaskSecondScreenIntent(this, false))
         }
     }
 

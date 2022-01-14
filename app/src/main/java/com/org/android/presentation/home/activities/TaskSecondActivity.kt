@@ -3,6 +3,7 @@ package com.org.android.presentation.home.activities
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import com.org.android.R
 import com.org.android.data.models.Person
@@ -41,9 +42,10 @@ class TaskSecondActivity : BaseActivity() {
         setupToolbar(
             binding.llToolbarMain.toolbar,
             getString(R.string.title_user_list),
-            false,
+            true,
             Color.WHITE,
-            toolbarColor = R.color.colorPrimary
+            toolbarColor = R.color.colorPrimary,
+            backButtonColor = R.color.colorWhite
         )
 
         attachObserver()
@@ -109,6 +111,13 @@ class TaskSecondActivity : BaseActivity() {
         if (binding.swipe.isRefreshing == true) {
             binding.swipe.isRefreshing = false
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

@@ -10,7 +10,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.org.android"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -132,5 +132,8 @@ dependencies {
     //Others
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "com.intuit.sdp:sdp-android:$sdp_version"
+
+    // Paging
+    implementation 'androidx.paging:paging-compose:1.0.0-alpha14'
 
 }

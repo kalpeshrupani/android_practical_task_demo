@@ -14,7 +14,7 @@ import com.google.gson.annotations.SerializedName
 
 data class PersonListRS(
     @SerializedName(AppConstant.data)
-    var personList: List<Person>? = arrayListOf(),
+    var personList: List<Person> = arrayListOf(),
     @SerializedName(AppConstant.page)
     var page: Int? = 0,
     @SerializedName(AppConstant.perPage)
