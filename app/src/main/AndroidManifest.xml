@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.org.android.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,13 +18,14 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-
         <activity
-            android:name="com.org.android.presentation.home.activities.HomeActivity"
+            android:name=".presentation.home.activities.TaskSecondActivity"
             android:screenOrientation="fullSensor" />
-
         <activity
-            android:name="com.org.android.presentation.splash.SplashActivity"
+            android:name=".presentation.home.activities.HomeActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".presentation.splash.SplashActivity"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -19,5 +19,6 @@
     <string name="no">No</string>
     <string name="android_practical_test">Android Practical Test</string>
     <string name="v1_0_0">v1.0.0</string>
+    <string name="title_user_list">User List</string>
 
 </resources>

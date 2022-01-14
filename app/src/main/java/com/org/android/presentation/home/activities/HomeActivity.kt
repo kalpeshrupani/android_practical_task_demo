@@ -14,8 +14,10 @@ import com.org.android.data.models.Person
 import com.org.android.databinding.ActivityHomeBinding
 import com.org.android.presentation.core.BaseActivity
 import com.org.android.presentation.home.HomeViewModel
+import com.org.android.presentation.utility.IntentHelper
 
 import com.org.android.presentation.utility.isNetworkAvailable
+import com.org.android.presentation.utility.startActivityCustom
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeActivity : BaseActivity() {
@@ -42,8 +44,15 @@ class HomeActivity : BaseActivity() {
             false,
             Color.BLACK
         )
+        initClickListener()
         attachObserver()
 
+    }
+
+    private fun initClickListener() {
+        binding.btnPracticalTaskSecond.setOnClickListener {
+            startActivityCustom(IntentHelper.getTaskSecondScreenIntent(this, true))
+        }
     }
 
     private fun attachObserver() {
