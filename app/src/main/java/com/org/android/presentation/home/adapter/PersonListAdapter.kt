@@ -1,8 +1,8 @@
 package com.org.android.presentation.home.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.org.android.R
 import com.org.android.data.models.Person
@@ -41,6 +41,16 @@ class PersonListAdapter() : BaseRecyclerViewAdapter<Person>() {
             itemBinding.root.setOnClickListener {
 
             }
+        }
+    }
+
+    object PersonComprator : DiffUtil.ItemCallback<Person>() {
+        override fun areItemsTheSame(oldItem: Person, newItem: Person): Boolean {
+            return oldItem.email == newItem.email
+        }
+
+        override fun areContentsTheSame(oldItem: Person, newItem: Person): Boolean {
+            return oldItem == newItem
         }
     }
 }

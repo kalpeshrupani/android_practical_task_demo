@@ -1,5 +1,6 @@
 package com.org.android.presentation.home.activities
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,9 @@ import com.org.android.databinding.ActivityTaskFirstBinding
 import com.org.android.presentation.core.BaseActivity
 import com.org.android.presentation.home.HomeViewModel
 import com.org.android.presentation.home.adapter.BoxListAdapter
+import com.org.android.presentation.utility.Logger
+import com.org.android.presentation.utility.hideKeyboardFrom
+import com.org.android.presentation.utility.showDialog
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -32,7 +36,7 @@ class TaskFirstActivity : BaseActivity() {
     private fun init() {
         setupToolbar(
             binding.llToolbarMain.toolbar,
-            getString(R.string.title_grid_list),
+            getString(R.string.practical_task_1),
             true,
             Color.WHITE,
             toolbarColor = R.color.colorPrimary,
@@ -46,6 +50,7 @@ class TaskFirstActivity : BaseActivity() {
     private fun initClickListener() {
         binding.btnSubmit.setOnClickListener {
             clearData()
+            hideKeyboardFrom(it)
             if (isValid()) {
                 val mNumber = binding.edtNumber.text.toString().toInt()
                 val sqrtNumberOf = Math.sqrt(mNumber.toDouble())
@@ -55,7 +60,7 @@ class TaskFirstActivity : BaseActivity() {
                 }
                 (binding.recyclerViewBox.layoutManager as GridLayoutManager).spanCount =
                     sqrtNumberOf.toInt()
-                adapter.resetData(mList)
+                adapter.updateData(mList)
                 startColorChange(mList)
             }
         }
@@ -85,8 +90,8 @@ class TaskFirstActivity : BaseActivity() {
 
     private fun checkSquareRoot(mNumber: Double): Boolean {
         val sqrtNumberOf = Math.sqrt(mNumber)
-        com.org.android.presentation.utility.Logger.d("====mNumber=" + mNumber)
-        com.org.android.presentation.utility.Logger.d("====msqrtNumberOf=" + sqrtNumberOf)
+        Logger.d("====mNumber=" + mNumber)
+        Logger.d("====msqrtNumberOf=" + sqrtNumberOf)
         if (sqrtNumberOf * sqrtNumberOf == mNumber) {
             return true
         }
@@ -104,8 +109,11 @@ class TaskFirstActivity : BaseActivity() {
     private fun setupAdapter() {
         adapter = BoxListAdapter(this) { data: Int, position: Int ->
             if (mRandomList.size == 0) {
-                Toast.makeText(this, getString(R.string.label_wow_you_did_it), Toast.LENGTH_SHORT)
-                    .show()
+                showDialog("", getString(R.string.label_wow_you_did_it), getString(R.string.okay),
+                    DialogInterface.OnClickListener { dialogInterface, i ->
+                        dialogInterface.dismiss()
+                        clearData()
+                    })
             } else {
                 turnBoxRed()
             }
@@ -117,7 +125,7 @@ class TaskFirstActivity : BaseActivity() {
         mRandomList = mList.shuffled() as ArrayList<Int>
         Log.e("==randomList", mRandomList.joinToString())
         launch {
-            delay(5000L)// 5 Second Timer
+            delay(3000L)// 3 Second Timer
             runOnUiThread {
                 turnBoxRed()
             }
@@ -126,8 +134,8 @@ class TaskFirstActivity : BaseActivity() {
     }
 
     private fun turnBoxRed() {
-        adapter.mRedPosition = mRandomList.get(0)
-        adapter.notifyItemChanged(mRandomList.get(0))
+        adapter.mRedPosition = mRandomList[0]
+        adapter.notifyItemChanged(mRandomList[0])
         mRandomList.removeAt(0)
     }
 

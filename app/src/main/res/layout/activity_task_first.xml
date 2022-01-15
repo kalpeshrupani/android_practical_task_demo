@@ -13,9 +13,14 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_number"
-        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/round_corner_white"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"
         android:hint="@string/enter_square_root_number"
         android:layout_width="0dp"
+
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
@@ -29,9 +34,10 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_height="@dimen/_30sdp"
         android:textColor="@color/colorWhite"
-        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:textAllCaps="false"
         android:layout_marginEnd="@dimen/_10sdp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="@id/edt_number"

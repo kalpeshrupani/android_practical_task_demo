@@ -1,22 +1,19 @@
 package com.org.android.presentation.home.activities
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.lifecycle.Observer
 import com.org.android.R
 import com.org.android.data.models.Person
-import com.org.android.databinding.ActivityHomeBinding
 import com.org.android.databinding.ActivityTaskSecondBinding
 import com.org.android.presentation.core.BaseActivity
 import com.org.android.presentation.home.HomeViewModel
 import com.org.android.presentation.home.adapter.PersonListAdapter
 import com.org.android.presentation.utility.EndlessPaginationScrollListener
-import com.org.android.presentation.utility.IntentHelper
 import com.org.android.presentation.utility.isNetworkAvailable
-import com.org.android.presentation.utility.startActivityCustom
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class TaskSecondActivity : BaseActivity() {
     private val homeViewModel: HomeViewModel by viewModel()
@@ -34,14 +31,13 @@ class TaskSecondActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTaskSecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         init()
     }
 
     private fun init() {
         setupToolbar(
             binding.llToolbarMain.toolbar,
-            getString(R.string.title_user_list),
+            getString(R.string.practical_task_2),
             true,
             Color.WHITE,
             toolbarColor = R.color.colorPrimary,

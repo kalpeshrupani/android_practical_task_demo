@@ -8,7 +8,8 @@ package com.org.android.presentation.home
 
 import androidx.lifecycle.MutableLiveData
 import com.org.android.data.contract.HomeRepo
-import com.org.android.data.models.*
+import com.org.android.data.models.PersonListPRQ
+import com.org.android.data.models.PersonListRS
 import com.org.android.presentation.core.BaseViewModel
 import kotlinx.coroutines.launch
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,27 +10,38 @@
         android:id="@+id/llToolbarMain"
         layout="@layout/layout_toolbar_main" />
 
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:src="@drawable/ic_company_logo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_practical_task_fisrt"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_150sdp"
+            android:background="@drawable/round_corner"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Practical Task 1" />
+            android:text="@string/practical_task_1"
+            android:textColor="@color/colorWhite" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_practical_task_second"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_corner"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Practical Task 2" />
+            android:text="@string/practical_task_2"
+            android:textColor="@color/colorWhite" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

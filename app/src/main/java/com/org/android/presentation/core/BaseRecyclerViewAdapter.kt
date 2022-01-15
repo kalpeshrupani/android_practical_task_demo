@@ -3,7 +3,6 @@ package com.org.android.presentation.core
 import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.collections.ArrayList
 
 /**
  * Created by Kalpesh Rupani
@@ -47,7 +46,7 @@ abstract class BaseRecyclerViewAdapter<T>(
         notifyItemRangeRemoved(0, oldSize)
     }
 
-    fun resetData(list: List<T>) {
+    fun updateData(list: List<T>) {
         this.mList = list as ArrayList<T>
         notifyDataSetChanged()
     }

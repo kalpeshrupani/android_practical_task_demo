@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".presentation.splash.SplashActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:src="@drawable/ic_company_logo"
+        app:layout_constraintBottom_toTopOf="@id/txt_label"
+        app:layout_constraintEnd_toEndOf="@id/txt_label"
+        app:layout_constraintStart_toStartOf="@id/txt_label" />
+
+
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_label"
         style="@style/tvStyleBold"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/android_practical_test"
-        android:textSize="@dimen/_24sdp"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
