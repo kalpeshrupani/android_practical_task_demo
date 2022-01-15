@@ -1,26 +1,19 @@
-## What's new for v2.0.0
 
-- Full login signup module added into the structure, customize as per project
-- View binding - Kindly refer official link given below
-- Don't delete extra.kt file, because it will help you for rename the package name. Just right click
-  and do refactor your package name
+## Practical task integrated using  Kotlin with MVVM - Clean Architecture
 
-## Other utility methods
+## Added utility methods
 
 1. showDialog()
 2. startActivityCustom()
 3. hideKeyboard()
-4. getDeviceTimeZone() - Asia/Kotkata
-5. getAndroidId()
+4. getAndroidId()
 
 ## integers.xml - Add minimum and maximum length validation for the whole project
 
 ## User full links
 
 1. AndroidX versions: https://developer.android.com/jetpack/androidx/versions
-2.
-
-ViewBinding: https://proandroiddev.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
+2.ViewBinding: https://proandroiddev.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
 
 ## Special thanks to
 
